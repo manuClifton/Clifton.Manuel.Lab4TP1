@@ -1,0 +1,23 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+      <!-- Login Form -->
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <label for="email"></label>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email" formControlName="email">
+        <div *ngIf="registerForm.get('email')?.hasError('required') && registerForm.get('email')?.touched" 
+          class="form-text">El email es requerido</div>
+        <label for="password"></label>
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña" formControlName="password">
+        <div *ngIf="registerForm.get('password')?.hasError('required')  && registerForm.get('password')?.touched" 
+              id="passwordHelp" class="form-text">El PASSWORD es requerido</div>
+        <div *ngIf="registerForm.get('password')?.hasError('minlength') && registerForm.get('password')?.touched" 
+              id="passwordHelp" class="form-text">El PASSWORD minimo de 6 Caracteres</div>
+        <input type="submit" class="fadeIn fourth" value="Crear Usuario">
+      </form>
+  
+      <div id="formFooter">
+        <a class="underlineHover" routerLink="/login">Logueate</a>
+      </div>
+    </div>
+</div>

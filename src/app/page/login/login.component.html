@@ -1,0 +1,43 @@
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Login Form -->
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <input type="text" id="login" class="fadeIn second"
+               name="login" placeholder="Email"
+                formControlName="email"
+                >
+                <div *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched" 
+                class="form-text">El email es requerido</div>
+              <!--  <div *ngIf="loginForm.get('email')?.hasError('emailInvalido') && loginForm.get('email')?.touched" 
+                class="form-text">El email NO PUEDE SER HOTMAIL</div> -->
+        <input type="password" id="password" class="fadeIn third"
+               name="login" placeholder="Contraseña"
+                formControlName="password"
+                >
+                <div *ngIf="loginForm.get('password')?.hasError('required')  && loginForm.get('password')?.touched" 
+                    id="passwordHelp" class="form-text">El PASSWORD es requerido</div>
+                <div *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched" 
+                    id="passwordHelp" class="form-text">El PASSWORD minimo de 6 Caracteres</div>
+        <input type="submit" class="fadeIn fourth" value="Entrar">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+
+        <a class="underlineHover" routerLink="/register">Registrate</a>
+
+      </div>
+
+  
+    </div>
+  </div>
+
+  <div id="div-totop" class="cmn-divfloat">
+   <!-- <a href="#span-top" class="btn btn-primary cmn-btncircle">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+-->
+
+
+</div>

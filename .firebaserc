@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tpsalajuegos-765d9": {
+      "hosting": {
+        "TpSalaJuegos": [
+          "tpsalajuegos-765d9"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tpsalajuegos-765d9"
+  }
+}
