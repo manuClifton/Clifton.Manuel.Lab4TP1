@@ -17,6 +17,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { ConectionDirective } from './directives/conection.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     MenuComponent,
     RegisterComponent,
     ChatComponent,
-    QuiensoyComponent
+    QuiensoyComponent,
+    ConectionDirective
   ],
   imports: [
     BrowserModule,

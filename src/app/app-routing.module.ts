@@ -6,15 +6,27 @@ import { LoginComponent } from './page/login/login.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import {
+  canActivate,
+  redirectUnauthorizedTo,
+  redirectLoggedInTo
+} from '@angular/fire/auth-guard';
 
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent},
+  { path: '', component: LoginComponent,
+  ...canActivate(redirectLoggedInToHome)
+},
+  { path: 'home', component: HomeComponent,},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'quiensoy', component: QuiensoyComponent  },
-  { path: 'chat', component: ChatComponent },
+  { path: 'chat', component: ChatComponent,
+  ...canActivate(redirectUnauthorizedToLogin)
+  },
   {
     path: '**',
     redirectTo: 'home'

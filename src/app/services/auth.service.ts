@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth } from '@angular/fire/auth';
+import { Auth,  } from '@angular/fire/auth';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
 @Injectable({
@@ -37,6 +37,16 @@ export class AuthService {
 
   logOut(){
     return signOut(this.auth);
+  }
+
+  async getCurrentUser(){
+     await this.auth.onAuthStateChanged(user =>{
+        if(user){
+          return user;
+        }else{
+          return null;
+        }
+    })
   }
 
 ////////////////7
