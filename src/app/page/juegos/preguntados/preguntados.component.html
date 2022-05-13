@@ -1,0 +1,36 @@
+
+<div class="container">
+    <div class="row">
+         <div class="col-12">
+            <h1 class="text-center">Categoria: {{categoria}}</h1>
+        
+              <div class="card text-center">
+                   <div class="card-header bg-info">
+                        <h4 class="text-center">Pregunta: {{pregunta}}</h4>
+                   </div>	
+                   <div class="card-body text-center">
+                    <img *ngIf="imagen" src="{{imagen}}"  alt="" style="width: 100%; height: 30vh; object-fit:cover;">
+
+                        <div class="row text-center m-2">
+                            <button (click)="oprimirBtn(0)" [ngStyle]="style" id="btn1" type="button" class="btn btn-outline-primary m-1 col-lg-12 col-md-12 col-xs-12 ">{{opcion1}}</button>
+                            <button (click)="oprimirBtn(1)" [ngStyle]="style" id="btn2" type="button" class="btn btn-outline-primary m-1 col-lg-12 col-md-12 col-xs-12 ">{{opcion2}}</button>
+                            <button (click)="oprimirBtn(2)" [ngStyle]="style" id="btn3" type="button" class="btn btn-outline-primary m-1 col-lg-12 col-md-12 col-xs-12 ">{{opcion3}}</button>
+                            <button (click)="oprimirBtn(3)" [ngStyle]="style" id="btn4" type="button" class="btn btn-outline-primary m-1 col-lg-12 col-md-12 col-xs-12 ">{{opcion4}}</button>
+                        </div>
+                   </div>
+              </div>
+          </div>
+          <div class="col-12 mt-2">
+            <div class="card">
+                 <div class="card-header bg-gradient">
+                      <h4 class="text-center">HISTORIAL</h4>
+                      <div class="input-group input-group-sm row">
+                             <span class="input-group-addon col-lg-12" id="resultado"></span>
+                        </div>
+                 </div>
+                 <div class="card-body text-center">
+                      <h4>GANADAS: {{jugador.ganadas}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PERDIDAS: {{jugador.perdidas}} </h4>
+                 </div>   
+            </div>
+    </div>
+</div>

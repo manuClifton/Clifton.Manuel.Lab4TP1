@@ -27,6 +27,9 @@ const routes: Routes = [
   { path: 'chat', component: ChatComponent,
   ...canActivate(redirectUnauthorizedToLogin)
   },
+  { path: 'juegos', 
+  loadChildren: () =>import('../app/page/juegos/juegos-routing.module').then(m => m.JuegosRoutingModule)
+},
   {
     path: '**',
     redirectTo: 'home'

@@ -26,4 +26,25 @@ async showAlertBad(message:string){
     timer: 1500
   })
 }
+async showAlertInfo(message:string){
+  Swal.fire({
+    position: 'top-end',
+    icon: 'info',
+    title: message,
+    showConfirmButton: false,
+    timer: 1500
+  })
 }
+
+async showAlertWarninw(message:string){
+  Swal.fire({
+    position: 'top-end',
+    icon: 'warning',
+    title: message,
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
+
+
+}//

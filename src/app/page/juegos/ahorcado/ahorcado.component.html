@@ -1,0 +1,87 @@
+
+<div class="container py-0 m-5">
+    <div class="row">
+         <div class="col-6">
+              <h1>Juego del Ahorcado</h1>
+              <p>Igresa las letras en el teclado virtual</p>
+              <input type="text" maxlength="1"
+                   name="" id="" placeholder="Ingrese una letra"
+                   [(ngModel)]="letra">
+              <p>{{guiones}}</p>
+              <div class="ahorcado">
+                   <img src="{{imagen}}" alt="" style="width: 350px; height: 350px;">
+              </div>
+         </div>
+         <div class="col-6">
+              <div class="container">
+                   <div class="row">
+                        <div class="col-12">
+              <div class="card">
+                   <div class="card-header bg-warning">
+                        <h4 class="text-center">TECLADO</h4>
+                        <div class="input-group input-group-sm row">
+                               <span class="input-group-addon col-lg-12" id="resultado"></span>
+                          </div>
+                   </div>	
+                   <div class="card-body">
+                        <div class="row">
+                             <button (click)="verificar('a')" type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">A</button>
+                             <button (click)="verificar('b')" type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">B</button>
+                             <button (click)="verificar('c')" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">C</button>
+                             <button (click)="verificar('d')" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">D</button>
+                             <button (click)="verificar('e')" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">E</button>
+                             <button (click)="verificar('f')" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">F</button>
+
+                        </div>
+                        <div class="row">
+                             <button (click)="verificar('g')" type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">G</button>
+                             <button (click)="verificar('h')"  type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">H</button>
+                             <button (click)="verificar('i')"  type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">I</button>
+                             <button (click)="verificar('j')"  type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">J</button>
+                             <button (click)="verificar('k')" type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">K</button>
+                             <button (click)="verificar('l')"  type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">L</button>
+                        </div>
+                        <div class="row">
+                             <button (click)="verificar('m')" type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">M</button>
+                             <button (click)="verificar('n')" type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">N</button>
+                             <button (click)="verificar('ñ')" type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">Ñ</button>
+                             <button (click)="verificar('o')" type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">O</button>
+                             <button (click)="verificar('p')" type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">P</button>
+                             <button (click)="verificar('q')" type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">Q</button>
+                        </div>
+                        <div class="row">
+                             <button (click)="verificar('r')" type="button" class="btn btn-outline-primary  col-lg-2 col-md-2 col-xs-2">R</button>
+                             <button (click)="verificar('s')" type="button" class="btn btn-outline-primary  col-lg-2 col-md-2 col-xs-2">S</button>
+                             <button (click)="verificar('t')" type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">T</button>
+                             <button (click)="verificar('u')"type="button" class="btn btn-outline-primary  col-lg-2 col-md-2 col-xs-2">U</button>
+                             <button (click)="verificar('v')" type="button" class="btn btn-outline-primary  col-lg-2 col-md-2 col-xs-2">V</button>
+                             <button (click)="verificar('w')" type="button" class="btn btn-outline-primary col-lg-2 col-md-2 col-xs-2">W</button>
+                        </div>
+                        <div class="row">
+                             <button (click)="verificar('x')" type="button" class="btn btn-outline-primary  col-lg-2 col-md-2 col-xs-2">X</button>
+                             <button (click)="verificar('y')" type="button" class="btn btn-outline-primary  col-lg-2 col-md-2 col-xs-2">Y</button>
+                             <button (click)="verificar('z')" type="button" class="btn btn-outline-primary  col-lg-2 col-md-2 col-xs-2">Z</button>
+
+                        </div>
+                   </div>
+              </div>
+             </div>
+             <div class="col-12">
+              <div class="card">
+                   <div class="card-header bg-gradient">
+                        <h4 class="text-center">HISTORIAL</h4>
+                        <div class="input-group input-group-sm row">
+                               <span class="input-group-addon col-lg-12" id="resultado"></span>
+                          </div>
+                   </div>
+                   <div class="card-body text-center">
+                        <h4>GANADAS: {{jugador.ganadas}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PERDIDAS: {{jugador.perdidas}}</h4>
+                   </div>   
+              </div>
+             </div>
+            </div>
+           </div>
+         </div>
+ 
+    </div>
+</div>

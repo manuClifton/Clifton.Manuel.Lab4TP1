@@ -19,24 +19,32 @@ export class MenuComponent implements OnInit{
   ];
   public isLogged = false;
   public user:any;
+  public coso:any;
   
   constructor(  private authService: AuthService,
                 private router: Router,
                 private auth: Auth
-    ) { }
+    ) { 
+    /* localStorage.setItem("minombre",JSON.stringify([{nombre:'primero'}]));
+    // let miarray:any = JSON.parse(localStorage.getItem('minombre'))??[];
+      sessionStorage.setItem("minombre2", JSON.stringify([{nombre:'segundo'}]));
+    */
+      // localStorage.setItem("minombre",JSON.stringify(this.ListadoProfesoresPrincipal));
+      //  let miArray:any=  JSON.parse(localStorage.getItem("minombre"));
+    }
 
     
-  async ngOnInit() {
+   ngOnInit() {
     //aca busco el usuario, y lo guardo en variable tipo USUARIO(id, email,)
     //Despues busco su rol y demas infomarcion
-      await this.auth.onAuthStateChanged(user =>{
+       this.auth.onAuthStateChanged(user =>{
         if(user){
           this.user = user;
           console.log(this.user.email)
           this.isLogged = true;
         }
       })
-      //console.log(this.authService.getCurrentUser())
+      console.log(this.authService.getCurrentUser())
   }
 
 

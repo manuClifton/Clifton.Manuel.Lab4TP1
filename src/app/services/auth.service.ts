@@ -39,8 +39,8 @@ export class AuthService {
     return signOut(this.auth);
   }
 
-  async getCurrentUser(){
-     await this.auth.onAuthStateChanged(user =>{
+  getCurrentUser(){
+      this.auth.onAuthStateChanged(user =>{
         if(user){
           return user;
         }else{

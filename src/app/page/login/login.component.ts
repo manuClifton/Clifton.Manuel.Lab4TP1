@@ -55,18 +55,27 @@ export class LoginComponent implements OnInit {
   accesoRapido(id:number){
 
     const {email, password} = this.loginForm.value
-   /* if(id == 0){
-      email = 'admin@admin.com'
-      password = '000000'
-    }
+
+
+     if(id == 0){
+        this.loginForm = this.fb.group({
+          email: ['admin@admin.com',[Validators.required, Validators.email]],
+          password: ['000000',[Validators.required, Validators.minLength(6)]]
+        });
+      }
+
     if(id == 1){
-      email = 'usuario1@usuario1.com'
-      password = '111111'
+      this.loginForm = this.fb.group({
+        email: ['usuario1@usuario1.com',[Validators.required, Validators.email]],
+        password: ['111111',[Validators.required, Validators.minLength(6)]]
+      });
     }
     if(id == 2){
-      email = 'usuario2@usuario2.com'
-      password = '222222'
-    }*/
+      this.loginForm = this.fb.group({
+        email: ['usuario2@usuario2.com',[Validators.required, Validators.email]],
+        password: ['222222',[Validators.required, Validators.minLength(6)]]
+      });
+    }
 }
 
 

@@ -10,7 +10,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { RegisterComponent } from './page/register/register.component';
 import { ChatComponent } from './page/chat/chat.component';
 import { QuiensoyComponent } from './page/quiensoy/quiensoy.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -18,6 +18,11 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { ConectionDirective } from './directives/conection.directive';
+import { AhorcadoComponent } from './page/juegos/ahorcado/ahorcado.component';
+import { MayormenorComponent } from './page/juegos/mayormenor/mayormenor.component';
+import { PreguntadosComponent } from './page/juegos/preguntados/preguntados.component';
+import { MijuegoComponent } from './page/juegos/mijuego/mijuego.component';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -28,13 +33,20 @@ import { ConectionDirective } from './directives/conection.directive';
     RegisterComponent,
     ChatComponent,
     QuiensoyComponent,
-    ConectionDirective
+    ConectionDirective,
+    AhorcadoComponent,
+    MayormenorComponent,
+    PreguntadosComponent,
+    MijuegoComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    FormsModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
