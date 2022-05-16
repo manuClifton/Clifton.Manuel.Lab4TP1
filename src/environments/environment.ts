@@ -15,7 +15,7 @@ export const environment = {
 
     projectId: 'saladejuegos-mclifton',
     appId: '1:262162278238:web:626d77a2c50f334ac411cf',
-    databaseURL: 'https://tpsalajuegos-765d9-default-rtdb.firebaseio.com',
+   // databaseURL: 'https://tpsalajuegos-765d9-default-rtdb.firebaseio.com',
     storageBucket: 'saladejuegos-mclifton.appspot.com',
     locationId: 'us-central',
     apiKey: 'AIzaSyDiin4-fkQVheLOA5_fev7Y2NFmZEVDr0w',
