@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "TpSalaJuegos:build:production"
+              "browserTarget": "saladejuegos:build:production"
             },
             "development": {
-              "browserTarget": "TpSalaJuegos:build:development"
+              "browserTarget": "saladejuegos:build:development"
             }
           },
           "defaultConfiguration": "development"
