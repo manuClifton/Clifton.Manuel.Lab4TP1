@@ -35,7 +35,7 @@ export class ChatComponent implements OnInit {
         this.cargarUsuario()
       }
      })
-    this.obtenerChats
+    this.obtenerChats();
   }
 
 
